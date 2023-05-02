@@ -50,7 +50,17 @@ class EniDemoPage extends StatelessWidget {
             // Milieu,
             Expanded(child: Container(color: Colors.amber,)),
             // Footer
-            Flex(direction: Axis.horizontal,children: []),
+            Padding(
+              padding: const EdgeInsets.all(20),
+              child: Flex(direction: Axis.horizontal, 
+                // Mes 4 boutons
+                children: [
+                    Expanded(child: Text("Fil", textAlign: TextAlign.center,)),
+                    Expanded(child: Text("Notification", textAlign: TextAlign.center)),
+                    Expanded(child: Text("Message", textAlign: TextAlign.center)),
+                    Expanded(child: Text("Moi", textAlign: TextAlign.center))
+                ],),
+            ),
       ],)
     );
   }
