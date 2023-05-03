@@ -1,6 +1,5 @@
-import 'package:eni_demo/content-page.dart';
-import 'package:eni_demo/footer-page.dart';
-import 'package:eni_demo/header-page.dart';
+import 'package:eni_demo/pages/demo-widget.dart';
+import 'package:eni_demo/pages/eni-demo-page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -20,32 +19,9 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       // Page d'accueil
-      home: const EniDemoPage(),
+      home: DemoWidgetPage(),
     );
   }
 }
 
 
-class EniDemoPage extends StatelessWidget {
-
-  const EniDemoPage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          title: const Text('Sample Code'),
-        ),
-        body: Flex(
-          direction: Axis.vertical,
-          children: [
-            // header
-            HeaderPage(),
-            // content
-            ContentPage(),
-            // footer
-            FooterPage()
-          ],
-        ));
-  }
-}
