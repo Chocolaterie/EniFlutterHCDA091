@@ -19,6 +19,21 @@ class HeaderButton extends StatelessWidget {
   }
 }
 
+// Mon button en mode icon dans le header
+class HeaderIconButton extends StatelessWidget {
+
+  String imagePath;
+
+  // constructor
+  HeaderIconButton(this.imagePath ,{super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+        child: IconButton(icon: Image.asset(this.imagePath), onPressed: () {},));
+  }
+}
+
 // Notre class qui est un Widget, affichant le Header
 class HeaderPage extends StatelessWidget {
   @override
@@ -33,9 +48,9 @@ class HeaderPage extends StatelessWidget {
           direction: Axis.horizontal,
           // Mes 3 boutons
           children: [
-            HeaderButton("Nouveau"),
+            HeaderIconButton("images/pencil.png"),
             HeaderButton("Accueil"),
-            HeaderButton("Rechercher")
+            HeaderIconButton("images/search.png")
           ],
         ),
       ),

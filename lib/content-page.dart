@@ -1,4 +1,21 @@
+import 'package:eni_demo/components/login-form.dart';
+import 'package:eni_demo/components/tweet-item.dart';
 import 'package:flutter/material.dart';
+
+// Mon button en mode icon dans le footer du tweet
+class FooterTwitterIconButton extends StatelessWidget {
+
+  String imagePath;
+
+  // constructor
+  FooterTwitterIconButton(this.imagePath ,{super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+        child: IconButton(icon: Image.asset(this.imagePath), onPressed: () {},));
+  }
+}
 
 class ContentPage extends StatelessWidget {
   @override
@@ -6,50 +23,12 @@ class ContentPage extends StatelessWidget {
     return Expanded(
         child: Container(
       child: Flex(direction: Axis.vertical, children: [
-        // Le top du tweet
-        Flex(
-          direction: Axis.vertical,
-          children: [
-            // 1er ligne (author - time)
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Flex(
-                direction: Axis.horizontal,
-                children: const [
-                  // Author
-                  Expanded(
-                    child: Text("LaCrevette@Chocolatine"),
-                  ),
-                  // Time
-                  Text("50s")
-                ],
-              ),
-            ),
-            //Message du tweet
-            const Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Text(
-                  "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam"),
-            )
-          ],
-        ),
-        // Footer
-        Padding(
-          padding: const EdgeInsets.all(20),
-          child: Flex(
-            direction: Axis.horizontal,
-            // Mes 3 boutons
-            children: const [
-              Expanded(
-                  child: Text(
-                "Répondre",
-                textAlign: TextAlign.center,
-              )),
-              Expanded(child: Text("Retweet", textAlign: TextAlign.center)),
-              Expanded(child: Text("Favoris", textAlign: TextAlign.center))
-            ],
-          ),
-        ),
+        // Mon formulaire
+        LoginForm(),
+        
+        // Mon tweet
+        TweetItem(),
+      
       ]),
     ));
   }

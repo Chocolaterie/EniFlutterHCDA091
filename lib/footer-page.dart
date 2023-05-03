@@ -13,6 +13,7 @@ class FooterButton extends StatelessWidget {
   }
 }
 
+
 /// Composant : Footer d'une page
 class FooterPage extends StatelessWidget {
   
