@@ -1,5 +1,24 @@
 import 'package:flutter/material.dart';
 
+// Mon button dans le header
+class HeaderButton extends StatelessWidget {
+  // properties
+  String label;
+
+  // constructor
+  HeaderButton(this.label, {super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+        child: Text(
+      this.label,
+      textAlign: TextAlign.center,
+      style: TextStyle(color: Colors.white),
+    ));
+  }
+}
+
 // Notre class qui est un Widget, affichant le Header
 class HeaderPage extends StatelessWidget {
   @override
@@ -13,21 +32,10 @@ class HeaderPage extends StatelessWidget {
         child: Flex(
           direction: Axis.horizontal,
           // Mes 3 boutons
-          children: const [
-            Expanded(
-                child: Text(
-                  "Nouveau",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(color: Colors.white),
-            )),
-            Expanded(
-                child: Text("Accueil",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(color: Colors.white))),
-            Expanded(
-                child: Text("Rechercher",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(color: Colors.white))),
+          children: [
+            HeaderButton("Nouveau"),
+            HeaderButton("Accueil"),
+            HeaderButton("Rechercher")
           ],
         ),
       ),
