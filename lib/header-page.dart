@@ -29,7 +29,8 @@ class HeaderIconButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
+    return Padding(
+      padding: EdgeInsets.all(5),
         child: IconButton(icon: Image.asset(this.imagePath), onPressed: () {},));
   }
 }
@@ -43,7 +44,7 @@ class HeaderPage extends StatelessWidget {
       child:
           // Flex pour afficher 3 boutons horizontal
           Padding(
-        padding: const EdgeInsets.all(20),
+        padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 10),
         child: Flex(
           direction: Axis.horizontal,
           // Mes 3 boutons

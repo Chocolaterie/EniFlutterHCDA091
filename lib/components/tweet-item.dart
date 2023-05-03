@@ -2,7 +2,6 @@ import 'package:eni_demo/content-page.dart';
 import 'package:flutter/material.dart';
 
 class TweetItem extends StatelessWidget {
-  
   @override
   Widget build(BuildContext context) {
     return Flex(
@@ -10,29 +9,32 @@ class TweetItem extends StatelessWidget {
       children: [
         // Le top du tweet
         Flex(
-          direction: Axis.vertical,
+          direction: Axis.horizontal,
           children: [
-            // 1er ligne (author - time)
-            Padding(
-              padding: const EdgeInsets.all(8.0),
+            // Image
+            SizedBox(
+                width: 125,
+                child: Image.asset(
+                  "images/pain_choco.jpg",
+                  fit: BoxFit.contain,
+                )),
+            // Le reste
+            Expanded(
               child: Flex(
-                direction: Axis.horizontal,
+                direction: Axis.vertical,
                 children: const [
-                  // Author
-                  Expanded(
-                    child: Text("LaCrevette@Chocolatine"),
-                  ),
-                  // Time
-                  Text("50s")
+                  // 1er ligne (author - time)
+                  Text("LaCrevette@Chocolatine"),
+                  //Message du tweet
+                  Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: Text(
+                      "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam",
+                    ),
+                  )
                 ],
               ),
             ),
-            //Message du tweet
-            const Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Text(
-                  "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam"),
-            )
           ],
         ),
         // Footer
