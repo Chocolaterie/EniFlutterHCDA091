@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       // Page d'accueil
-      home: EniDemoPage(),
+      home: DemoWidgetPage(),
     );
   }
 }
