@@ -1,3 +1,5 @@
+import 'package:eni_demo/pages/demo-listview-page.dart';
+import 'package:eni_demo/pages/demo-stateful-widget-page.dart';
 import 'package:eni_demo/pages/demo-widget.dart';
 import 'package:eni_demo/pages/eni-demo-page.dart';
 import 'package:flutter/material.dart';
@@ -19,9 +21,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       // Page d'accueil
-      home: DemoWidgetPage(),
+      home: DemoStatefulPage(),
     );
   }
 }
-
-

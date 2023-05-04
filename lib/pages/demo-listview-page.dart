@@ -24,7 +24,7 @@ class MyLineItem extends StatelessWidget {
 class DemoListViewPage extends StatelessWidget {
 
   // Ma liste de données
-  var lists = ["Isaac", "Julien", "Bruno"];
+  var lists = ["Isaac", "Julien", "Bruno", "Isaac", "Julien", "Bruno", "Isaac", "Julien", "Bruno"];
 
   @override
   Widget build(BuildContext context) {
