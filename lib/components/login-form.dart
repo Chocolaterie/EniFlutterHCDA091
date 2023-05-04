@@ -1,6 +1,51 @@
 import 'package:flutter/material.dart';
 
-class LoginForm extends StatelessWidget {
+class LoginForm extends StatefulWidget {
+  @override
+  State<LoginForm> createState() {
+    return LoginFormState();
+  }
+}
+
+class LoginFormState extends State<LoginForm> {
+  // propriétés
+  String errorMessage = "";
+
+  // Le binding des deux champs saisies (email et password)
+  TextEditingController emailTEC = TextEditingController();
+  TextEditingController passwordTEC = TextEditingController();
+
+  // la méthode pour faire le traitement
+  void surfaceControl() {
+    // par défaut pas d'erreur
+    bool success = true;
+
+    // Verifier si aucun champs n'est vide
+    if (emailTEC.text.isEmpty) {
+      // error
+      success = false;
+    }
+    // Verifier si aucun champs n'est vide
+    if (passwordTEC.text.isEmpty) {
+      // error
+      success = false;
+    }
+
+    // Si il y'a au moins une erreur
+    setState(() {
+      // Si tout va bien aucun message d'erreur
+      if (success) {
+        errorMessage = "";
+      }
+      // Sinon message d'erreur
+      else {
+        errorMessage = "Erreur, les champs sont invalides";
+      }
+      // Version ternaire
+      // errorMessage = success ? "" : "Erreur, les champs sont invalides";
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Flex(
@@ -11,13 +56,15 @@ class LoginForm extends StatelessWidget {
           child: Text("Connexion à Twitter"),
         ),
 
-        const TextField(
-          decoration: InputDecoration(labelText: "Identifiant"),
+        TextField(
+          controller: emailTEC,
+          decoration: const InputDecoration(labelText: "Identifiant"),
         ),
 
-        const TextField(
+        TextField(
+          controller: passwordTEC,
           obscureText: true,
-          decoration: InputDecoration(labelText: "Password"),
+          decoration: const InputDecoration(labelText: "Password"),
         ),
 
         // Attention une ligne qui va afficher horizontalement deux telements
@@ -35,11 +82,22 @@ class LoginForm extends StatelessWidget {
           child: SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                  onPressed: () {},
-                  child: Padding(
+                  onPressed: () {
+                    surfaceControl();
+                  },
+                  child: const Padding(
                     padding: EdgeInsets.symmetric(vertical: 11.0),
                     child: Text("Connexion"),
                   ))),
+        ),
+
+        // Affichera le message d'erreur
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Text(
+            errorMessage,
+            style: const TextStyle(color: Colors.redAccent, fontSize: 16),
+          ),
         )
       ],
     );
