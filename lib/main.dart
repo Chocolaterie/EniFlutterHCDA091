@@ -1,12 +1,18 @@
+import 'package:eni_demo/demo/demo-user-provider/user-detail-page.dart';
+import 'package:eni_demo/demo/demo-user-provider/user-provider-app.dart';
+import 'package:eni_demo/demo/demo-user-provider/user-provider.dart';
 import 'package:eni_demo/pages/demo-form.dart';
 import 'package:eni_demo/pages/demo-listview-page.dart';
 import 'package:eni_demo/pages/demo-stateful-widget-page.dart';
 import 'package:eni_demo/pages/demo-widget.dart';
 import 'package:eni_demo/pages/eni-demo-page.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(const MyApp());
+  // Run app pour la demo user provider
+  // runApp(const UserProviderApp());
 }
 
 // Application Flutter
@@ -22,7 +28,10 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       // Page d'accueil
-      home: DemoFormStatefulPage(),
+      routes: {
+        "/": (context) => DemoWidgetPage(),
+        "/page2": (context) => DemoFormStatefulPage()
+      },
     );
   }
 }
