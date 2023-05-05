@@ -6,7 +6,8 @@ import 'package:eni_demo/pages/demo-form.dart';
 import 'package:eni_demo/pages/demo-listview-page.dart';
 import 'package:eni_demo/pages/demo-stateful-widget-page.dart';
 import 'package:eni_demo/pages/demo-widget.dart';
-import 'package:eni_demo/pages/eni-demo-page.dart';
+import 'package:eni_demo/tp/eni-twitter-page.dart';
+import 'package:eni_demo/tp/twitter-list-page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -30,7 +31,8 @@ class MyApp extends StatelessWidget {
       ),
       // Page d'accueil
       routes: {
-        "/": (context) => DemoApiPage(),
+        "/": (context) => const EniTwitterPage(),
+        "/tweets": (context) => const TwitterListPage()
       },
     );
   }

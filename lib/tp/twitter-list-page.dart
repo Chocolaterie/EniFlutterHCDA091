@@ -1,17 +1,16 @@
-import 'package:eni_demo/content-page.dart';
-import 'package:eni_demo/footer-page.dart';
-import 'package:eni_demo/header-page.dart';
+import 'package:eni_demo/tp/footer-page.dart';
+import 'package:eni_demo/tp/header-page.dart';
+import 'package:eni_demo/tp/twitter-list-widget.dart';
 import 'package:flutter/material.dart';
 
-class EniDemoPage extends StatelessWidget {
-
-  const EniDemoPage({super.key});
+class TwitterListPage extends StatelessWidget {
+  const TwitterListPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text('Sample Code'),
+          title: const Text('Liste des tweets'),
         ),
         body: Flex(
           direction: Axis.vertical,
@@ -19,7 +18,7 @@ class EniDemoPage extends StatelessWidget {
             // header
             HeaderPage(),
             // content
-            ContentPage(),
+            const TwitterListWidget(),
             // footer
             FooterPage()
           ],

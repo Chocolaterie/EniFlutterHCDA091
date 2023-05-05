@@ -15,6 +15,8 @@ class DemoFormStatefulPage extends StatelessWidget {
 
 // Stateful widget
 class DemoFormStatefulWidget extends StatefulWidget {
+  const DemoFormStatefulWidget({super.key});
+
   // Associer mon state
   @override
   State<DemoFormStatefulWidget> createState() {

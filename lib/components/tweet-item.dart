@@ -1,7 +1,12 @@
-import 'package:eni_demo/content-page.dart';
+import 'package:eni_demo/tp/content-page.dart';
+import 'package:eni_demo/tp/tweet.dart';
 import 'package:flutter/material.dart';
 
 class TweetItem extends StatelessWidget {
+  Tweet tweet;
+
+  TweetItem(this.tweet, {super.key});
+
   @override
   Widget build(BuildContext context) {
     return Flex(
@@ -22,16 +27,14 @@ class TweetItem extends StatelessWidget {
             Expanded(
               child: Flex(
                 direction: Axis.vertical,
-                children: const [
+                children: [
                   // 1er ligne (author - time)
-                  Text("LaCrevette@Chocolatine"),
+                  Text('${tweet.author}'),
                   //Message du tweet
                   Padding(
                     padding: EdgeInsets.all(8.0),
-                    child: Text(
-                      "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam",
-                    ),
-                  )
+                    child: Text('${tweet.message}'),
+                  ),
                 ],
               ),
             ),

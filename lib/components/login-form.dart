@@ -36,6 +36,8 @@ class LoginFormState extends State<LoginForm> {
       // Si tout va bien aucun message d'erreur
       if (success) {
         errorMessage = "";
+        // je navigue sur la page list des tweets
+        Navigator.pushNamed(context, "/tweets");
       }
       // Sinon message d'erreur
       else {
