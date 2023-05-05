@@ -1,14 +1,4 @@
-[
-    {
-        "id" : 1,
-        "title" : "Chocolatine ananas"
-    },
-    {
-        "id" : 2,
-        "title" : "Pinte crevette"
-    },
-    {
-        "id" :3,
-        "title" : "C'est vendredi on est fatigués"
-    }
-]
+{
+    "id" :3,
+    "title" : "C'est vendredi on est fatigués"
+}

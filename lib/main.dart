@@ -1,3 +1,4 @@
+import 'package:eni_demo/demo/demo-api/demi-api-page.dart';
 import 'package:eni_demo/demo/demo-user-provider/user-detail-page.dart';
 import 'package:eni_demo/demo/demo-user-provider/user-provider-app.dart';
 import 'package:eni_demo/demo/demo-user-provider/user-provider.dart';
@@ -29,8 +30,7 @@ class MyApp extends StatelessWidget {
       ),
       // Page d'accueil
       routes: {
-        "/": (context) => DemoWidgetPage(),
-        "/page2": (context) => DemoFormStatefulPage()
+        "/": (context) => DemoApiPage(),
       },
     );
   }
