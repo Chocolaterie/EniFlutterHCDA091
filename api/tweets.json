@@ -1,0 +1,34 @@
+{
+    "tweets": [
+        {
+            "id": 1,
+            "author": "Bruno",
+            "message" : "Chocolatine ananas, J'adore la mal bouffe mais je paie le prix cher aprés"
+        },
+        {
+            "id": 2,
+            "author": "Julien",
+            "message" : "Crevette Nutella, Alors la non je ne suis pas d'accord"
+        },
+        {
+            "id": 3,
+            "author": "Marie",
+            "message" : "No comment"
+        },
+        {
+            "id": 4,
+            "author": "Manuel",
+            "message" : "Qu'est ce que je fais ici ?"
+        },
+        {
+            "id": 5,
+            "author": "Alexis",
+            "message" : "Coucou"
+        },
+        {
+            "id": 6,
+            "author": "Anonyme",
+            "message" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididun"
+        }
+    ]
+}
